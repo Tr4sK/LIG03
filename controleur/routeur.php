@@ -12,10 +12,10 @@ try {
 	if (isset($_GET['page'])){ 			// Test $_GET
 		// On récupère action=XX
 		$action=strtolower($_GET['page']);
-		require $action.'.php';
+		require_once $action.'.php';
 	}
 	else{
-		require 'main.php';			// $_GET vide
+		require_once 'main.php';			// $_GET vide
 	}
 }
 catch (Exception $e) {

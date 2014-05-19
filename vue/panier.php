@@ -1,5 +1,5 @@
 <div class="row">
-	<form role="form" method="post" action="?page=panier&action=submit">
+	<form role="form" method="post" action="?page=panier&action=order&type=submit">
 	<div class="row">
 		<div class="col-md-12">
 			<?= liste($dContenue) ?>

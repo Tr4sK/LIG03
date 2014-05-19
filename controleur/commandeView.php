@@ -7,17 +7,15 @@ $user->getUser($_SESSION["user"]["id"]);
 
 
 
-require_once ('vue/panier.php');
+require ('vue/panier.php');
 
 function liste($donnees)
 {
-	$prixTotal = 0;
+var_dump($_SESSION["panier"]);
 	foreach($_SESSION["panier"] as $id)
 	{
 		$produit = new Produit();
 		$produit->getProduit($id);
-		$prixTotal+=$id["nb"] * $produit->prix();
-
 		echo	'<div class="row">'
 			.'	<div class="col-md-3">'
 			.'		<img src="vue/image/produit/'. $produit->image() .'" alt="'. $produit->nom() .' class="img-thumbnail"/>'
@@ -47,16 +45,5 @@ function liste($donnees)
 			.'	</div>'
 			.'</div>';
 	}
-		echo	'<div class="row">'
-			.'	<div class="col-md-8">'
-			.'	</div>'
-			.'	<div class="col-md-2">'
-			.'		Sous-total = '
-			.'	</div>'
-			.'	<div class="col-md-2">'
-			.		$prixTotal
-			.'	<input type="hidden" name="prixtotal" value="'. $prixTotal .'">'
-			.'	</div>'
-			.'</div>';
 }
 ?>

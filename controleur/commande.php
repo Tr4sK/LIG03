@@ -15,12 +15,12 @@ if(isset($_GET["action"]))
 		if($_GET["type"] == "submit")
 		{
 			$dTitre = "Commande envoyé…";
-			$dContenu = "panierSubmit.php";
+			$dContenu = "commandeSubmit.php";
 		}
 		else
 		{
-			$dTitre = "Votre panier";
-			$dContenu = "panierView.php";
+			$dTitre = "Vos commande";
+			$dContenu = "commandeView.php";
 		}
 	}
 	else
@@ -30,7 +30,7 @@ if(isset($_GET["action"]))
 }
 else
 {
-//	require("main.php");
+	require("main.php");
 }
 
 require ("vue/template.php");
@@ -38,7 +38,7 @@ require ("vue/template.php");
 function contenu($donnees = NULL)
 {
 	if(isset($donnees)){
-		require_once ($donnees);
+		require ($donnees);
 	}
 }
 ?>

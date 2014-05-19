@@ -1,5 +1,5 @@
 <?php
 if(session_status()!=PHP_SESSION_ACTIVE)session_start();
-require 'controleur/routeur.php';
+require_once ('controleur/routeur.php');
 
 ?>

@@ -1,13 +1,8 @@
 <?php
-<<<<<<< HEAD
-
-=======
->>>>>>> cc6f3dae82bdbca83bce19e3e3dbfe5d3a4b953c
 require_once('titre.php');
 require_once('blocdroit.php');
 require_once('footer.php');
 
-<<<<<<< HEAD
 // appel de la fonction principale.
 // Génère la page d'accueil du site.
 // Landing page.
@@ -33,17 +28,3 @@ function contenu($donnees){
 		}
 }
 ?>
-=======
-$dTitre = "Contact";
-$dContenu = $dContenu;
-
-function contenu($donnees){
-	include_once('modele/Contact.class.php');
-	}
-	
-
-
-require ("vue/template.php");
-
-?>
->>>>>>> cc6f3dae82bdbca83bce19e3e3dbfe5d3a4b953c

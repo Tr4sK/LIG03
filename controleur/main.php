@@ -13,7 +13,7 @@ require_once('footer.php');
 $dTitre = "Bienvenue :)";
 $dContenu = $dContenu;
 
-require ("vue/template.php");
+require_once ("vue/template.php");
 
 function contenu($donnees){
 	// Affiche le contenu du bloc centrale
