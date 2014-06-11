@@ -6,12 +6,10 @@ $user = new User();
 $user->getUser($_SESSION["user"]["id"]);
 
 
-
 require ('vue/panier.php');
 
 function liste($donnees)
 {
-var_dump($_SESSION["panier"]);
 	foreach($_SESSION["panier"] as $id)
 	{
 		$produit = new Produit();

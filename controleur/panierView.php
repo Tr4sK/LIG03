@@ -12,11 +12,11 @@ require_once ('vue/panier.php');
 function liste($donnees)
 {
 	$prixTotal = 0;
-	foreach($_SESSION["panier"] as $id)
+	foreach($_SESSION["panier"] as $key => $value)
 	{
 		$produit = new Produit();
-		$produit->getProduit($id);
-		$prixTotal+=$id["nb"] * $produit->prix();
+		$produit->getProduit($key);
+		$prixTotal+=$value["nb"] * $produit->prix();
 
 		echo	'<div class="row">'
 			.'	<div class="col-md-3">'
@@ -40,10 +40,10 @@ function liste($donnees)
 			.		$produit->prix()
 			.'	</div>'
 			.'	<div class="col-md-1">'
-			.'		× '. $id["nb"]
+			.'		× '. $value["nb"]
 			.'	</div>'
 			.'	<div class="col-md-2">'
-			.'	 = '. $id["nb"] * $produit->prix() .'€'
+			.'	 = '. $value["nb"] * $produit->prix() .'€'
 			.'	</div>'
 			.'</div>';
 	}

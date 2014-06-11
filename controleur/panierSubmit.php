@@ -1,6 +1,10 @@
 <?php
 require_once('modele/User.class.php');
 require_once('modele/Commande.class.php');
+require_once('modele/CommandeLineOrder.class.php');
+
+
+
 $user = new User();
 $user->getUser($_SESSION["user"]["id"]);
 
@@ -17,10 +21,10 @@ var_dump($commande);
 var_dump($idcommade);
 if($idcommande > 0)
 {
-	foreach($_SESSION["panier"] as $id)
+	foreach($_SESSION["panier"] as $key => $value)
 	{
-		$item = new CommandLineOrder();
-		$item->addItem($id, $idcommande);
+		$item = new CommandeLineOrder();
+		$item->addItem($key, $idcommande);
 	}
 
 

@@ -108,6 +108,7 @@ class Commande
 	                .'"'. $this->user() .'")';
 	        $db->exec($sql);
 	        $id = $db->lastInsertID();
+var_dump($sql);
 	        return $id;
 	}	
 

@@ -19,8 +19,7 @@ class CommandeLineOrder extends Commande
 	function addItem($idProduit, $idCommande)
 	{
 		$db = new PDOConfig();
-		$sql = 'INSERT INTO `commandeLineOrder`(`idCommande`, `idProduit`) VALUES ("'. idCommande .'", "'. idProduit .'")';
-		var_dump($sql);
+		$sql = 'INSERT INTO `commandeLineOrder`(`idCommande`, `idProduit`) VALUES ("'. $idCommande .'", "'. $idProduit .'")';
 		$db->exec($sql);
 	}
 }
